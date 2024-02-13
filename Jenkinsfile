@@ -13,6 +13,7 @@ pipeline {
         stage("build"){
 		steps{
 		sh 'mvn clean deploy'
+		echo 'webhook setup is completed'
 		}
 	}
     }
