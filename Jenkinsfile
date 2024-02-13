@@ -5,11 +5,13 @@ pipeline {
         }
     }
 
+    environment{
+    	PATH = "/opt/apache-maven-3.9.6/bin:$PATH"
+    }
+
     stages {
-        stage('clone-src-code') {
-            steps {
-                git branch: 'shubham', credentialsId: 'git-cred', url: 'https://github.com/shubhamWithCode/tweet-trend-new.git'
-            }
-        }
+        stage("build"){
+		sh 'mvn clean deploy'
+	}
     }
 }
