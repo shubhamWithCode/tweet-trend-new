@@ -21,10 +21,6 @@ pipeline {
     environment {
       scannerHome = tool 'sonar-scanner'
     }
-	
-    tools {
-        jdk "jdk11" // the name you have given the JDK installation using the JDK manager (Global Tool Configuration)
-    }
 
     steps{
     withSonarQubeEnv('sonarqube-server') { // If you have configured more than one global server connection, you can specify its name
